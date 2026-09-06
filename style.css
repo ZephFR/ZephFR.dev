@@ -5,6 +5,8 @@ h1 {
 	font-family: 'Kavoon', cursive;
     color: white;
     font-size: 150px;
+    padding: 70px;
+    opacity: 0.5;
 }
 
 body {
@@ -16,7 +18,7 @@ body {
 	background: #F0865D;
 }
 
-video {
+img {
 	position: fixed;
 	top: 0;
 	left: 0;
