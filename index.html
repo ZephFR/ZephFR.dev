@@ -1,15 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZephFR.dev</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="thumbnail.png">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" type="image/png" href="img/thumbnail.png">
+    
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+  rel="stylesheet">
+
 </head>
 <body>
-    <img src="ShrimpFuckYou.png" alt="ShrimpFuckYou" class="background-image">
-    <h1>Kill yourself</h1>
-    
+    <header class="site-header section-shell">
+      <a class="site-logo" href="#home">ZephFR<span>.</span>dev</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="#home" data-i18n="navHome">Accueil</a>
+        <a href="#about-preview" data-i18n="navAbout">À propos</a>
+        <a href="#achievements" data-i18n="navAchievements">Distinctions</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-button" data-lang="fr" aria-pressed="true">FR</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" class="lang-button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </header>
+    <main>
+    <section class="hero" id="home">
+
+    <video class="hero-video"
+           id="hero-video"
+           autoplay muted loop playsinline
+           preload="metadata" poster="img/thumbnail.png">
+        <source src="videos/hero-showreel.mp4"
+                type="video/mp4">
+    </video>
+
+    <div class="hero-video-shade" aria-hidden="true"></div>
+    <div class="hero-content">
+        <h1 data-i18n="heroTitle">
+            Salut, moi c'est Maël
+        </h1>
+
+        <p data-i18n="heroSubtitle">
+            Étudiant Game Programming · ICAN
+        </p>
+    </div>
+    <button class="hero-video-control" id="hero-video-control" type="button" aria-label="Mettre la vidéo en pause">❚❚</button>
+
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="about-preview section-shell"
+         id="about-preview">
+
+    <div class="about-preview-image">
+        <img src="img/ZephPicture.jpg"
+             alt="Portrait de Maël Perrot"
+             loading="lazy">
+    </div>
+
+    <div class="about-preview-content">
+        <p class="eyebrow"
+           data-i18n="aboutEyebrow">
+            ENCHANTÉ !
+        </p>
+
+        <h2 data-i18n="aboutHeading">
+            Salut, moi c'est Maël.
+        </h2>
+
+        <p data-i18n="aboutDescription">
+            Je suis Maël, étudiant en Game Programming
+            à l'ICAN. J'aime développer des mécaniques
+            de gameplay et expérimenter avec des
+            systèmes interactifs.
+        </p>
+
+        <a href="#achievements"
+           class="button button-primary"
+           data-i18n="aboutButton">
+            En savoir plus
+        </a>
+    </div>
+
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achievements section-shell"
+         id="achievements">
+
+    <div class="section-heading">
+        <p class="eyebrow"
+           data-i18n="awardsEyebrow">
+            MON PARCOURS
+        </p>
+
+        <h2 data-i18n="awardsHeading">
+            Distinctions & Réalisations
+        </h2>
+    </div>
+
+    <div class="achievement-grid">
+
+        <article class="achievement-card">
+            <span class="achievement-icon"
+                  aria-hidden="true">🏆</span>
+
+            <div>
+                <p class="achievement-label">
+                    GAME JAM ICAN × MSI
+                </p>
+
+                <h3 data-i18n="awardOneTitle">
+                    1re place — 9 Lives Ago
+                </h3>
+
+                <p data-i18n="awardOneDescription">
+                    Première place remportée en équipe
+                    lors de la Game Jam ICAN × MSI.
+                </p>
+            </div>
+        </article>
+
+        <article class="achievement-card">
+            <span class="achievement-icon"
+                  aria-hidden="true">🎲</span>
+
+            <div>
+                <p class="achievement-label">
+                    CONCOURS DE BOULOGNE-BILLANCOURT
+                </p>
+
+                <h3 data-i18n="awardTwoTitle">
+                    Second tour — Tetris Summit
+                </h3>
+
+                <p data-i18n="awardTwoDescription">
+                    Jeu de plateau sélectionné pour
+                    le second tour du concours.
+                </p>
+            </div>
+        </article>
+
+    </div>
+</section>
+    </main>
+    <script src="script/script.js" defer></script>
 </body>
 </html>
