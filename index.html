@@ -1,159 +1,286 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZephFR.dev</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="icon" type="image/png" href="img/thumbnail.png">
-    
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-  rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
     <header class="site-header section-shell">
-      <a class="site-logo" href="#home">ZephFR<span>.</span>dev</a>
-      <nav class="site-nav" aria-label="Navigation principale">
-        <a href="#home" data-i18n="navHome">Accueil</a>
-        <a href="#about-preview" data-i18n="navAbout">À propos</a>
-        <a href="#achievements" data-i18n="navAchievements">Distinctions</a>
-      </nav>
-      <div class="language-switch" role="group" aria-label="Langue / Language">
-        <button type="button" class="lang-button" data-lang="fr" aria-pressed="true">FR</button>
-        <span aria-hidden="true">/</span>
-        <button type="button" class="lang-button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
+        <a class="site-logo" href="#home">ZephFR<span>.</span>dev</a>
+        <nav class="site-nav" aria-label="Navigation principale">
+            <a href="#home" data-i18n="navHome">Accueil</a>
+            <a href="#about-preview" data-i18n="navAbout">À propos</a>
+            <a href="#achievements" data-i18n="navAchievements">Distinctions</a>
+            <a href="#projects" data-i18n="navProjects">
+                Projets
+            </a>
+        </nav>
+        <div class="language-switch" role="group" aria-label="Langue / Language">
+            <button type="button" class="lang-button" data-lang="fr" aria-pressed="true">FR</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" class="lang-button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
     </header>
     <main>
-    <section class="hero" id="home">
+        <section class="hero" id="home">
 
-    <video class="hero-video"
-           id="hero-video"
-           autoplay muted loop playsinline
-           preload="metadata" poster="img\UnderConstuction.png">
-        <source src="videos/hero-showreel.mp4"
-                type="video/mp4">
-    </video>
+            <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata"
+                poster="img\UnderConstuction.png">
+                <source src="videos/hero-showreel.mp4" type="video/mp4">
+            </video>
 
-    <div class="hero-video-shade" aria-hidden="true"></div>
-    <div class="hero-content">
-        <h1 data-i18n="heroTitle">
-            Salut, moi c'est Maël
-        </h1>
+            <div class="hero-video-shade" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1 data-i18n="heroTitle">
+                    Salut, moi c'est Maël
+                </h1>
 
-        <p data-i18n="heroSubtitle">
-            Étudiant Game Programming · ICAN
-        </p>
-    </div>
-    <button class="hero-video-control" id="hero-video-control" type="button" aria-label="Mettre la vidéo en pause">❚❚</button>
-
-</section>
-
-<!-- ABOUT PREVIEW -->
-<section class="about-preview section-shell reveal"
-         id="about-preview">
-
-    <div class="about-preview-image reveal">
-        <img src="img/ZephPicture.jpg"
-             alt="Portrait de Maël Perrot"
-             loading="lazy">
-    </div>
-
-    <div class="about-preview-content reveal">
-        <p class="eyebrow"
-           data-i18n="aboutEyebrow">
-            ENCHANTÉ !
-        </p>
-
-        <h2 data-i18n="aboutHeading">
-            Salut, moi c'est Maël.
-        </h2>
-
-        <p data-i18n="aboutDescription">
-            Je suis Maël, étudiant en Game Programming
-            à l'ICAN. J'aime développer des mécaniques
-            de gameplay et expérimenter avec des
-            systèmes interactifs.
-        </p>
-
-        <a href="#achievements"
-           class="button button-primary"
-           data-i18n="aboutButton">
-            En savoir plus
-        </a>
-    </div>
-
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section class="achievements section-shell reveal"
-         id="achievements">
-
-    <div class="section-heading reveal">
-        <p class="eyebrow"
-           data-i18n="awardsEyebrow">
-            MON PARCOURS
-        </p>
-
-        <h2 data-i18n="awardsHeading">
-            Distinctions & Réalisations
-        </h2>
-    </div>
-
-    <div class="achievement-grid reveal">
-
-        <article class="achievement-card reveal">
-            <span class="achievement-icon"
-                  aria-hidden="true">🏆</span>
-
-            <div>
-                <p class="achievement-label">
-                    GAME JAM ICAN x MSI
-                </p>
-
-                <h3 data-i18n="awardOneTitle">
-                    1re place — 9 Lives Ago
-                </h3>
-
-                <p data-i18n="awardOneDescription">
-                    Première place remportée en équipe
-                    lors de la Game Jam ICAN x MSI.
+                <p data-i18n="heroSubtitle">
+                    Étudiant Game Programming · ICAN
                 </p>
             </div>
-        </article>
+            <button class="hero-video-control" id="hero-video-control" type="button"
+                aria-label="Mettre la vidéo en pause">❚❚</button>
 
-        <article class="achievement-card reveal">
-            <span class="achievement-icon"
-                  aria-hidden="true">🎲</span>
+        </section>
 
-            <div>
-                <p class="achievement-label">
-                    CONCOURS DE BOULOGNE-BILLANCOURT
-                </p>
+        <!-- ABOUT PREVIEW -->
 
-                <h3 data-i18n="awardTwoTitle">
-                    Second tour — Tetris Summit
-                </h3>
+        <!-- ABOUT ME -->
+        <section class="about-preview section-shell" id="about-preview" aria-labelledby="about-heading">
 
-                <p data-i18n="awardTwoDescription">
-                    Jeu de plateau sélectionné pour
-                    le second tour du concours.
-                </p>
+            <!-- Photo -->
+            <div class="about-preview-image reveal">
+                <img src="img/ZephPicture.jpg" alt="Portrait de Maël Perrot" width="600" height="800" loading="lazy">
             </div>
-        </article>
 
-    </div>
-</section>
+            <!-- Presentation -->
+            <div class="about-preview-content reveal">
+
+                <p class="eyebrow" data-i18n="aboutEyebrow">
+                    ENCHANTÉ !
+                </p>
+
+                <h2 id="about-heading" data-i18n="aboutHeading">
+                    Salut, moi c'est Zeph.
+                </h2>
+
+                <p data-i18n="aboutDescription">
+                    Je suis Maël Perrot, étudiant en Game Programming à l'ICAN Paris. J'aime transformer des idées en mécaniques de gameplay et comprendre comment différents systèmes interagissent.
+                </p>
+
+                <p data-i18n="aboutExperience">
+                    J'ai notamment développé des contrôleurs de personnage, des comportements ennemis, des systèmes de replay et des interactions audio, sur des projets individuels et en équipe.
+                </p>
+
+                <a href="#projects" class="button button-primary" data-i18n="aboutButton">
+                    Découvrir mes projets
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- ACHIEVEMENTS -->
+
+        <!-- ACHIEVEMENTS -->
+        <section class="achievements section-shell" id="achievements" aria-labelledby="achievements-heading">
+
+            <!-- Section heading -->
+            <div class="section-heading reveal">
+
+                <p class="eyebrow" data-i18n="awardsEyebrow">
+                    DISTINCTIONS
+                </p>
+
+                <h2 id="achievements-heading" data-i18n="awardsHeading">
+                    Quelques moments marquants.
+                </h2>
+
+                <p class="section-intro" data-i18n="awardsDescription">
+                    Des projets qui m'ont permis de progresser et de vivre de belles expériences.
+                </p>
+
+            </div>
+
+            <!-- Cards -->
+            <div class="achievement-grid">
+
+                <!-- 9 Lives Ago -->
+                <article class="achievement-card reveal">
+
+                    <div class="achievement-icon" aria-hidden="true">
+                        🏆
+                    </div>
+
+                    <p class="achievement-label">
+                        ICAN x MSI GAME JAM
+                    </p>
+
+                    <h3 data-i18n="awardOneTitle">
+                        Grand Prix MSI - 1er prix
+                    </h3>
+
+                    <p class="achievement-project">
+                        9 Lives Ago
+                    </p>
+
+                    <p class="achievement-description" data-i18n="awardOneDescription">
+                        Première place remportée en équipe lors de la Game Jam ICAN x MSI.
+                    </p>
+
+                    <a href="https://www.instagram.com/p/DebjutMCF1s/" class="achievement-link" target="_blank"
+                        rel="noopener noreferrer" data-i18n="awardOneLink">
+                        Voir la publication ↗
+                    </a>
+
+                </article>
+
+                <!-- Tetris Summit -->
+                <article class="achievement-card reveal">
+
+                    <div class="achievement-icon" aria-hidden="true">
+                        🎲
+                    </div>
+
+                    <p class="achievement-label" data-i18n="awardTwoCategory">
+                        CONCOURS DE BOULOGNE-BILLANCOURT
+                    </p>
+
+                    <h3 data-i18n="awardTwoTitle">
+                        Sélection au second tour
+                    </h3>
+
+                    <p class="achievement-project">
+                        Tetris Summit
+                    </p>
+
+                    <p class="achievement-description" data-i18n="awardTwoDescription">
+                        Jeu de plateau sélectionné pour le second tour du concours de Boulogne-Billancourt.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED PROJECTS -->
+        <section class="featured-projects section-shell" id="projects" aria-labelledby="projects-heading">
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow" data-i18n="projectsEyebrow">
+                    MES PROJETS
+                </p>
+
+                <h2 id="projects-heading" data-i18n="projectsHeading">
+                    Featured Projects
+                </h2>
+
+                <p class="section-intro" data-i18n="projectsDescription">
+                    Quelques jeux et systèmes sur lesquels j'ai eu l'occasion de travailler.
+                </p>
+
+            </div>
+
+            <div class="featured-grid">
+
+                <!-- 9 LIVES AGO -->
+                <article class="featured-card reveal">
+
+                    <div class="featured-media">
+                        <img src="img/NineLivesAgo-Thumbnail.gif" alt="Capture de gameplay de 9 Lives Ago"
+                            loading="lazy">
+                    </div>
+
+                    <div class="featured-content">
+
+                        <p class="featured-category">
+                            UNITY · C# · GAME JAM
+                        </p>
+
+                        <h3>9 Lives Ago</h3>
+
+                        <p class="featured-description" data-i18n="nineLivesDescription">
+                            Jeu créé en équipe lors d'une Game Jam remportée à la première place.Développement du Character Controller,du replay et du système audio.
+                        </p>
+
+                        <div class="featured-tags">
+                            <span>Character Controller</span>
+                            <span>Replay System</span>
+                            <span>Audio</span>
+                        </div>
+
+                        <div class="featured-actions">
+                            <a href="#achievements" class="button button-primary" data-i18n="nineLivesButton">
+                                Voir la distinction ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- SWARMZ -->
+                <article class="featured-card reveal">
+
+                    <div class="featured-media">
+                        <img src="img/SwarmZ-Thumbnail.gif" alt="Capture de gameplay de SwarmZ" loading="lazy">
+                    </div>
+
+                    <div class="featured-content">
+
+                        <p class="featured-category">
+                            CONSTRUCT 3 · TOP-DOWN SHOOTER
+                        </p>
+
+                        <h3>SwarmZ</h3>
+
+                        <p class="featured-description" data-i18n="swarmzDescription">
+                            Shoot'em up 2D avec pathfinding, comportements ennemis, brouillard directionnel et indicateurs de gameplay.
+                        </p>
+
+                        <div class="featured-tags">
+                            <span>Enemy AI</span>
+                            <span>Pathfinding</span>
+                            <span>Fog of War</span>
+                        </div>
+
+                        <div class="featured-actions">
+
+                            <a href="games/TopDownShooter/index.html" class="button button-primary" target="_blank"
+                                rel="noopener noreferrer" data-i18n="playSwarmz">
+                                Jouer à SwarmZ ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
     </main>
     <script src="script/script.js" defer></script>
 </body>
+
 </html>

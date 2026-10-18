@@ -99,89 +99,287 @@ button, .button {
 }
 
 
-/* About preview */
+/* =========================
+   ABOUT ME
+========================= */
 
 .about-preview {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    align-items: center;
-    gap: clamp(24px, 5vw, 70px);
+    grid-template-columns: minmax(220px, 340px) 1fr;
 
-    margin-top: 80px;
-    margin-bottom: 70px;
-    padding: 36px;
+    align-items: center;
+    gap: clamp(30px, 5vw, 75px);
+
+    margin-top: 90px;
+    margin-bottom: 80px;
+    padding: clamp(24px, 4vw, 48px);
 
     background: var(--cream);
     border: 2px solid var(--wood);
     border-radius: var(--radius-lg);
 }
 
+/* Personal photo */
+
+.about-preview-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+
+    border-radius: var(--radius-md);
+    border: 4px solid var(--wood);
+
+    box-shadow: 10px 10px 0 var(--wood-light);
+}
+
 .about-preview-image img {
     display: block;
     width: 100%;
-    height: auto;
-    border-radius: var(--radius-md);
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
 }
 
-.about-preview h2 {
-    font-size: clamp(2rem, 4vw, 3.3rem);
-    margin: 10px 0 16px;
+/* Text column */
+
+.about-preview-content {
+    min-width: 0;
+}
+
+.about-preview-content h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    line-height: 1.1;
+
+    margin: 10px 0 22px;
+
+    color: var(--ink);
 }
 
 .about-preview-content > p:not(.eyebrow) {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+
     color: var(--ink-soft);
+
+    margin: 0 0 18px;
     max-width: 650px;
-    margin-bottom: 24px;
 }
 
-/* Achievements */
+.about-preview-content .button {
+    margin-top: 16px;
+}
+
+/* =========================
+   ABOUT ME — MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .about-preview {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        padding: 24px;
+        margin-top: 50px;
+        margin-bottom: 60px;
+    }
+
+    .about-preview-image {
+        width: min(100%, 280px);
+        margin-inline: auto;
+    }
+
+    .about-preview-content {
+        text-align: center;
+    }
+
+    .about-preview-content > p:not(.eyebrow) {
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================
+   ACHIEVEMENTS
+========================= */
 
 .achievements {
-    margin-bottom: 90px;
+    margin-top: 80px;
+    margin-bottom: 100px;
 }
+
+/* Section heading */
+
+.achievements .section-heading {
+    max-width: 700px;
+    margin-bottom: 32px;
+}
+
+.achievements h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--ink);
+
+    margin: 10px 0 16px;
+}
+
+.achievements .section-intro {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+}
+
+/* Cards layout */
 
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-    margin-top: 26px;
+    gap: 24px;
 }
+
+/* Individual cards */
 
 .achievement-card {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
 
-    padding: 28px;
+    min-width: 0;
+    padding: 32px;
+
     background: #FCE6D8;
-
     border: 2px solid var(--wood);
     border-radius: var(--radius-md);
-    box-shadow: 6px 6px 0 var(--wood-light);
+
+    box-shadow: 7px 7px 0 var(--wood-light);
+
+    transition:
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
-.achievement-icon {
-    font-size: 2.1rem;
-    line-height: 1;
+.achievement-card:hover {
+    border-color: var(--coral);
+    box-shadow: 10px 10px 0 var(--wood-light);
 }
+
+/* Trophy / award icon */
+
+.achievement-icon {
+    display: grid;
+    place-items: center;
+
+    width: 62px;
+    height: 62px;
+    margin-bottom: 22px;
+
+    background: var(--cream);
+    border-radius: 16px;
+    border: 2px solid var(--wood);
+
+    font-size: 1.9rem;
+}
+
+/* Category */
 
 .achievement-label {
     margin: 0 0 10px;
-    color: var(--wood);
+
+    font-family: "DM Sans", sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+
+    color: var(--wood);
 }
+
+/* Award title */
 
 .achievement-card h3 {
-    margin: 0 0 12px;
-    font-size: 1.4rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    line-height: 1.15;
+
+    margin: 0 0 6px;
+    color: var(--ink);
 }
 
-.achievement-card p:last-child {
-    color: var(--ink-soft);
-    margin-bottom: 0;
+/* Project name */
+
+.achievement-project {
+    margin: 0 0 18px;
+
+    font-weight: 700;
+    color: var(--wood-light);
 }
+
+/* Description */
+
+.achievement-description {
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0 0 22px;
+}
+
+/* External link */
+
+.achievement-link {
+    display: inline-flex;
+    align-items: center;
+
+    margin-top: auto;
+
+    color: var(--wood-dark);
+    font-weight: 700;
+    text-decoration: none;
+
+    border-bottom: 2px solid var(--coral);
+    padding-bottom: 3px;
+}
+
+.achievement-link:hover {
+    color: var(--coral);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .achievements {
+        margin-top: 60px;
+        margin-bottom: 70px;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .achievement-card {
+        padding: 24px;
+    }
+}
+
+@media (min-width: 769px) {
+    .achievement-card:nth-child(2) {
+        transition-delay: 120ms;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .achievement-card {
+        transition: none;
+    }
+}
+
 
 /* Mobile */
 
@@ -263,6 +461,176 @@ button, .button {
 .reveal.visible {
   opacity: 1;
   transform: none;
+}
+
+
+/* =========================
+   FEATURED PROJECTS
+========================= */
+
+.featured-projects {
+    margin-top: 90px;
+    margin-bottom: 110px;
+}
+
+.featured-projects .section-heading {
+    max-width: 750px;
+    margin-bottom: 36px;
+}
+
+.featured-projects h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 10px 0 16px;
+    color: var(--ink);
+}
+
+.featured-projects .section-intro {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Grid */
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+/* Project card */
+
+.featured-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+
+    background: #FCE6D8;
+    border: 2px solid var(--wood);
+    border-radius: var(--radius-lg);
+
+    box-shadow: 8px 8px 0 var(--wood-light);
+}
+
+/* Image */
+
+.featured-media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--wood-dark);
+}
+
+.featured-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.35s ease;
+}
+
+.featured-card:hover .featured-media img {
+    transform: scale(1.04);
+}
+
+/* Text */
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+
+    padding: 28px;
+}
+
+.featured-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+
+    color: var(--wood-light);
+    margin: 0 0 10px;
+}
+
+.featured-content h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.65rem, 2.5vw, 2.2rem);
+
+    margin: 0 0 14px;
+    color: var(--ink);
+}
+
+.featured-description {
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0 0 22px;
+}
+
+/* Technical tags */
+
+.featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 26px;
+}
+
+.featured-tags span {
+    padding: 6px 11px;
+    border-radius: 999px;
+
+    background: var(--cream);
+    border: 1px solid #DAB49A;
+
+    color: var(--wood);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Buttons */
+
+.featured-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: auto;
+    padding-bottom: 8px;
+}
+
+/* Mobile */
+
+@media (min-width: 769px) {
+    .featured-card:nth-child(2) {
+        transition-delay: 120ms;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-projects {
+        margin-top: 60px;
+        margin-bottom: 70px;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .featured-content {
+        padding: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .featured-media img {
+        transition: none;
+    }
 }
 
 
