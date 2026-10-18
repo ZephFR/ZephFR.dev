@@ -6,7 +6,7 @@ const translations = {
     aboutDescription: "Je suis Maël, étudiant en Game Programming à l'ICAN. J'aime développer des mécaniques de gameplay et expérimenter avec des systèmes interactifs.",
     aboutButton: "Voir mes réalisations", awardsEyebrow: "MON PARCOURS",
     awardsHeading: "Distinctions & Réalisations", awardOneTitle: "1re place — 9 Lives Ago",
-    awardOneDescription: "Première place remportée en équipe lors de la Game Jam ICAN × MSI.",
+    awardOneDescription: "Première place remportée en équipe lors de la Game Jam ICAN x MSI.",
     awardTwoTitle: "Second tour — Tetris Summit",
     awardTwoDescription: "Jeu de plateau sélectionné pour le second tour du concours.",
     pauseVideo: "Mettre la vidéo en pause", playVideo: "Lire la vidéo"
@@ -18,7 +18,7 @@ const translations = {
     aboutDescription: "I'm Maël, a Game Programming student at ICAN. I enjoy building gameplay mechanics and experimenting with interactive systems.",
     aboutButton: "See my achievements", awardsEyebrow: "MY JOURNEY",
     awardsHeading: "Awards & Achievements", awardOneTitle: "1st Place — 9 Lives Ago",
-    awardOneDescription: "First place awarded to our team at the ICAN × MSI Game Jam.",
+    awardOneDescription: "First place awarded to our team at the ICAN x MSI Game Jam.",
     awardTwoTitle: "Second Round — Tetris Summit",
     awardTwoDescription: "Board game selected for the second round of the competition.",
     pauseVideo: "Pause video", playVideo: "Play video"
