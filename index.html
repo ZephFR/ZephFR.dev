@@ -21,25 +21,27 @@
 <body>
     <header class="site-header section-shell">
         <a class="site-logo" href="#home">ZephFR<span>.</span>dev</a>
-        <nav class="site-nav" aria-label="Navigation principale">
+        <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
             <a href="#home" data-i18n="navHome">Accueil</a>
             <a href="#about-preview" data-i18n="navAbout">À propos</a>
             <a href="#achievements" data-i18n="navAchievements">Distinctions</a>
-            <a href="#projects" data-i18n="navProjects">
-                Projets
-            </a>
+            <a href="#projects" data-i18n="navProjects">Projets</a>
+            <a href="#contact" data-i18n="footerContact">Contact</a>
         </nav>
         <div class="language-switch" role="group" aria-label="Langue / Language">
             <button type="button" class="lang-button" data-lang="fr" aria-pressed="true">FR</button>
             <span aria-hidden="true">/</span>
             <button type="button" class="lang-button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-    </header>
+        </div>  
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="site-navigation" aria-expanded="false">
+        <span class="menu-icon" aria-hidden="true"></span>
+    </button>
+</header>
     <main>
         <section class="hero" id="home">
 
             <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata"
-                poster="img\UnderConstuction.png">
+                poster="img/UnderConstuction.png">
                 <source src="videos/hero-showreel.mp4" type="video/mp4">
             </video>
 
@@ -393,7 +395,7 @@
                 </a>
 
                 <!-- Replace with your actual profile URL -->
-                <a href="#"
+                <a href="https://zeph-fr.itch.io/"
                    id="contact-itch-link"
                    data-i18n="contactItch">
                     itch.io ↗
@@ -403,14 +405,7 @@
         </div>
     </div>
 </section>
-
-
-    </main>
-    
-<!-- =========================
-     FOOTER
-========================= -->
-
+</main>
 <footer class="site-footer">
 
     <div class="footer-inner section-shell">

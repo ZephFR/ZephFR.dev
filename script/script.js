@@ -627,7 +627,7 @@ if (emailText) {
 if (emailLink) {
     emailLink.href =
         `mailto:${contactEmail}?subject=` +
-        encodeURIComponent("Game Programming Opportunity");
+        encodeURIComponent("Opportunité de stage / alternance / emploi / collaboration");
 }
 
 // Automatic copyright year
@@ -654,6 +654,86 @@ if (copyEmailButton) {
             console.warn("Could not copy email:", error);
         }
     });
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+const mobileMenuButton = document.getElementById(
+    "mobile-menu-toggle"
+);
+
+const mobileNavigation = document.getElementById(
+    "site-navigation"
+);
+
+function setMobileMenu(open) {
+    if (!mobileMenuButton || !mobileNavigation) return;
+
+    mobileMenuButton.setAttribute(
+        "aria-expanded",
+        String(open)
+    );
+
+    mobileNavigation.classList.toggle("is-open", open);
+
+    mobileMenuButton.setAttribute(
+        "aria-label",
+        language === "fr"
+            ? (open ? "Fermer le menu" : "Ouvrir le menu")
+            : (open ? "Close menu" : "Open menu")
+    );
+}
+
+if (mobileMenuButton && mobileNavigation) {
+
+    mobileMenuButton.addEventListener("click", () => {
+        const isOpen =
+            mobileMenuButton.getAttribute("aria-expanded") === "true";
+
+        setMobileMenu(!isOpen);
+    });
+
+    // Close after selecting a section
+    mobileNavigation.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            setMobileMenu(false);
+        });
+    });
+
+    // Close with Escape
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            setMobileMenu(false);
+        }
+    });
+
+    // Close when clicking outside the header
+    document.addEventListener("click", event => {
+        if (!event.target.closest(".site-header")) {
+            setMobileMenu(false);
+        }
+    });
+
+    // Reset when switching to desktop
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            setMobileMenu(false);
+        }
+    });
+
+    // Keep the menu label translated
+    document.querySelectorAll(".lang-button").forEach(button => {
+        button.addEventListener("click", () => {
+            setMobileMenu(
+                mobileMenuButton.getAttribute("aria-expanded") === "true"
+            );
+        });
+    });
+
+    setMobileMenu(false);
 }
 
 
