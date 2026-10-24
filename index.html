@@ -80,11 +80,13 @@
                 </h2>
 
                 <p data-i18n="aboutDescription">
-                    Je suis Maël Perrot, étudiant en Game Programming à l'ICAN Paris. J'aime transformer des idées en mécaniques de gameplay et comprendre comment différents systèmes interagissent.
+                    Je suis Maël Perrot, étudiant en Game Programming à l'ICAN Paris. J'aime transformer des idées en
+                    mécaniques de gameplay et comprendre comment différents systèmes interagissent.
                 </p>
 
                 <p data-i18n="aboutExperience">
-                    J'ai notamment développé des contrôleurs de personnage, des comportements ennemis, des systèmes de replay et des interactions audio, sur des projets individuels et en équipe.
+                    J'ai notamment développé des contrôleurs de personnage, des comportements ennemis, des systèmes de
+                    replay et des interactions audio, sur des projets individuels et en équipe.
                 </p>
 
                 <a href="#projects" class="button button-primary" data-i18n="aboutButton">
@@ -218,7 +220,8 @@
                         <h3>9 Lives Ago</h3>
 
                         <p class="featured-description" data-i18n="nineLivesDescription">
-                            Jeu créé en équipe lors d'une Game Jam remportée à la première place.Développement du Character Controller,du replay et du système audio.
+                            Jeu créé en équipe lors d'une Game Jam remportée à la première place.Développement du
+                            Character Controller,du replay et du système audio.
                         </p>
 
                         <div class="featured-tags">
@@ -253,7 +256,8 @@
                         <h3>SwarmZ</h3>
 
                         <p class="featured-description" data-i18n="swarmzDescription">
-                            Shoot'em up 2D avec pathfinding, comportements ennemis, brouillard directionnel et indicateurs de gameplay.
+                            Shoot'em up 2D avec pathfinding, comportements ennemis, brouillard directionnel et
+                            indicateurs de gameplay.
                         </p>
 
                         <div class="featured-tags">
@@ -279,7 +283,189 @@
 
         </section>
 
+
+        <!-- TECHNICAL SKILLS -->
+        <section class="technical-skills section-shell" id="skills" aria-labelledby="skills-heading">
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow" data-i18n="skillsEyebrow">
+                    CE QUE J'UTILISE
+                </p>
+
+                <h2 id="skills-heading" data-i18n="skillsHeading">
+                    Technical Skills.
+                </h2>
+
+                <p class="skills-intro" data-i18n="skillsIntro">
+                    Langages, moteurs et systèmes avec lesquels
+                    j'ai travaillé sur mes projets.
+                </p>
+
+            </div>
+
+            <!-- Les catégories seront créées en JavaScript -->
+            <div class="skills-list" id="skills-list"></div>
+
+        </section>
+
+        
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact-section section-shell"
+         id="contact"
+         aria-labelledby="contact-heading">
+
+    <div class="contact-card reveal">
+
+        <div class="contact-content">
+
+            <p class="eyebrow" data-i18n="contactEyebrow">
+                RESTONS EN CONTACT
+            </p>
+
+            <h2 id="contact-heading" data-i18n="contactHeading">
+                Travaillons ensemble !
+            </h2>
+
+            <p class="contact-description"
+               data-i18n="contactDescription">
+                Intéressé par mes projets ou à la recherche
+                d'un Game Programmer ? N'hésite pas
+                à me contacter.
+            </p>
+
+            <div class="contact-actions">
+
+                <a class="contact-button contact-button-primary"
+                   id="contact-email-link"
+                   href="#">
+                    <span aria-hidden="true">✉</span>
+                    <span data-i18n="contactEmailButton">
+                        M'envoyer un email
+                    </span>
+                </a>
+
+                <a class="contact-button contact-button-secondary"
+                   href="assets/CV.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <span aria-hidden="true">↗</span>
+                    <span data-i18n="contactCvButton">
+                        Voir mon CV
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="contact-bottom">
+
+            <div class="contact-email-area">
+                <span class="contact-small-label"
+                      data-i18n="contactEmailLabel">
+                    Mon adresse email
+                </span>
+
+                <div class="contact-email-row">
+                    <span id="contact-email-text"></span>
+
+                    <button class="contact-copy-button"
+                            id="contact-copy-email"
+                            type="button"
+                            data-i18n-aria-label="contactCopyEmail">
+                        <span aria-hidden="true">⧉</span>
+                        <span data-i18n="contactCopyEmail">
+                            Copier
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="contact-socials">
+                <a href="https://github.com/ZephFR"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub ↗
+                </a>
+
+                <!-- Replace with your actual profile URL -->
+                <a href="#"
+                   id="contact-itch-link"
+                   data-i18n="contactItch">
+                    itch.io ↗
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
     </main>
+    
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner section-shell">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a class="footer-logo" href="#home">
+                    zeph<span>.</span>
+                </a>
+
+                <p data-i18n="footerDescription">
+                    Maël Perrot · Game Programming
+                </p>
+            </div>
+
+            <nav class="footer-nav"
+                 aria-label="Footer navigation">
+
+                <a href="#home" data-i18n="navHome">
+                    Accueil
+                </a>
+
+                <a href="#about" data-i18n="navAbout">
+                    À propos
+                </a>
+
+                <a href="#projects" data-i18n="navProjects">
+                    Projets
+                </a>
+
+                <a href="#contact" data-i18n="footerContact">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>© <span id="footer-year">2026</span>
+               Maël Perrot</p>
+
+            <a href="#home"
+               class="footer-back-top"
+               data-i18n="footerBackTop">
+                Retour en haut ↑
+            </a>
+
+        </div>
+    </div>
+
+</footer>
+
     <script src="script/script.js" defer></script>
 </body>
 

@@ -9,7 +9,7 @@ const translations = {
     "des comportements ennemis, des systèmes de replay et " +
     "des interactions audio, sur des projets individuels " +
     "et en équipe.",
-    aboutButton: "Voir mes réalisations", awardsEyebrow: "MON PARCOURS",
+    aboutButton: "Voir mes réalisations",
     awardsEyebrow: "DISTINCTIONS",
 
 awardsHeading: "Quelques moments marquants.",
@@ -55,6 +55,74 @@ swarmzDescription:
     "ennemis, brouillard directionnel et indicateurs " +
     "de gameplay.",
 
+
+skillsEyebrow: "CE QUE J'UTILISE",
+skillsHeading: "Compétences techniques.",
+skillsIntro:
+    "Langages, moteurs et systèmes avec lesquels " +
+    "j'ai travaillé sur mes projets.",
+
+categoryLanguages: "Langages de programmation",
+categoryEngines: "Moteurs de jeu",
+categoryTools: "Outils et méthodes",
+categorySystems: "Systèmes de gameplay",
+
+skillNineLives:
+    "Développement du Character Controller, " +
+    "du système de replay des clones et de " +
+    "l'enregistrement audio.",
+
+skillSwarmz:
+    "Programmation des comportements ennemis, " +
+    "du pathfinding, du brouillard directionnel " +
+    "et des indicateurs de gameplay.",
+
+skillGrappling:
+    "Prototype de déplacement avec grappin " +
+    "et interactions physiques sous Unity.",
+
+cppNote:
+    "Niveau intermédiaire en C++. " +
+    "Aucun projet public associé pour le moment.",
+
+unrealNote:
+    "Expérience avec Unreal Engine via Blueprints. " +
+    "Projet à présenter prochainement.",
+
+gitNote:
+    "Utilisation de Git pour le versionnement " +
+    "de projets de développement.",
+
+githubNote:
+    "Hébergement et partage de dépôts de projets.",
+
+visualStudioNote:
+    "Environnement de développement et de débogage.",
+
+viewProject: "Découvrir le projet ↗",
+
+
+contactEyebrow: "RESTONS EN CONTACT",
+contactHeading: "Travaillons ensemble !",
+
+contactDescription:
+    "Intéressé par mes projets ou à la recherche " +
+    "d'un Game Programmer ? Je suis ouvert aux " +
+    "opportunités de stage, d'alternance et aux " +
+    "postes juniors. N'hésite pas à me contacter !",
+
+contactEmailButton: "M'envoyer un email",
+contactCvButton: "Voir mon CV",
+contactEmailLabel: "Mon adresse email",
+contactCopyEmail: "Copier",
+contactEmailCopied: "Copié !",
+contactItch: "itch.io ↗",
+
+footerDescription: "Maël Perrot · Game Programming",
+footerContact: "Contact",
+footerBackTop: "Retour en haut ↑",
+
+
 playSwarmz: "Jouer à SwarmZ ↗",
 
     pauseVideo: "Mettre la vidéo en pause", playVideo: "Lire la vidéo"
@@ -69,7 +137,7 @@ playSwarmz: "Jouer à SwarmZ ↗",
     "I've worked on character controllers, enemy behaviors, " +
     "replay systems and audio interactions, both individually " +
     "and in teams.",
-    aboutButton: "See my achievements", awardsEyebrow: "MY JOURNEY",
+    aboutButton: "See my achievements",
     
 awardsEyebrow: "ACHIEVEMENTS",
 
@@ -118,6 +186,72 @@ swarmzDescription:
 playSwarmz: "Play SwarmZ ↗",
 
 
+skillsEyebrow: "WHAT I WORK WITH",
+skillsHeading: "Technical Skills.",
+skillsIntro:
+    "Languages, engines and gameplay systems " +
+    "I've worked with across my projects.",
+
+categoryLanguages: "Programming Languages",
+categoryEngines: "Game Engines",
+categoryTools: "Tools & Workflow",
+categorySystems: "Gameplay Systems",
+
+skillNineLives:
+    "Developed the character controller, " +
+    "clone replay system and audio recording.",
+
+skillSwarmz:
+    "Implemented enemy behaviors, pathfinding, " +
+    "directional fog of war and gameplay " +
+    "feedback indicators.",
+
+skillGrappling:
+    "Unity movement prototype featuring " +
+    "grappling mechanics and physics interactions.",
+
+cppNote:
+    "Intermediate C++ knowledge. " +
+    "No public project associated yet.",
+
+unrealNote:
+    "Experience with Unreal Engine using Blueprints. " +
+    "A project may be showcased later.",
+
+gitNote:
+    "Using Git for version control " +
+    "during development.",
+
+githubNote:
+    "Hosting and sharing project repositories.",
+
+visualStudioNote:
+    "Development and debugging environment.",
+
+viewProject: "Explore Project ↗",
+
+
+contactEyebrow: "GET IN TOUCH",
+contactHeading: "Let's work together!",
+
+contactDescription:
+    "Interested in my projects or looking for " +
+    "a Game Programmer? I'm open to internships, " +
+    "work-study opportunities and junior positions. " +
+    "Feel free to get in touch!",
+
+contactEmailButton: "Send me an email",
+contactCvButton: "View Resume",
+contactEmailLabel: "My email address",
+contactCopyEmail: "Copy",
+contactEmailCopied: "Copied!",
+contactItch: "itch.io ↗",
+
+footerDescription: "Maël Perrot · Game Programming",
+footerContact: "Contact",
+footerBackTop: "Back to top ↑",
+
+
     pauseVideo: "Pause video", playVideo: "Play video"
   }
 };
@@ -143,6 +277,16 @@ function setLanguage(lang) {
   document.querySelectorAll('.lang-button').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
   try { localStorage.setItem('zeph-language', lang); } catch(e) {}
   updateVideoButton();
+  // Refresh dynamically generated skill titles and descriptions.
+  renderSkills();
+  // Reset the copy button label when changing language
+const copyLabel = document.querySelector(
+    '#contact-copy-email [data-i18n="contactCopyEmail"]'
+);
+
+if (copyLabel) {
+    copyLabel.textContent = translations[lang].contactCopyEmail;
+}
 }
 document.querySelectorAll('.lang-button').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
 if (video && videoControl) {
@@ -163,4 +307,355 @@ if ('IntersectionObserver' in window) {
   }, { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 } else document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+
+/* =========================
+   TECHNICAL SKILLS DATA
+========================= */
+
+const skillsData = [
+    {
+        id: "languages",
+        number: "01",
+        titleKey: "categoryLanguages",
+        skills: [
+            {
+                id: "csharp",
+                name: "C#",
+                projects: ["nineLives", "grappling"]
+            },
+            {
+                id: "cpp",
+                name: "C++",
+                projects: [],
+                noteKey: "cppNote"
+            }
+        ]
+    },
+    {
+        id: "engines",
+        number: "02",
+        titleKey: "categoryEngines",
+        skills: [
+            {
+                id: "unity",
+                name: "Unity",
+                projects: ["nineLives", "grappling"]
+            },
+            {
+                id: "unreal",
+                name: "Unreal Engine (Blueprints)",
+                projects: [],
+                noteKey: "unrealNote"
+            },
+            {
+                id: "construct",
+                name: "Construct 3",
+                projects: ["swarmz"]
+            }
+        ]
+    },
+    {
+        id: "tools",
+        number: "03",
+        titleKey: "categoryTools",
+        skills: [
+            {
+                id: "git",
+                name: "Git",
+                projects: [],
+                noteKey: "gitNote"
+            },
+            {
+                id: "github",
+                name: "GitHub",
+                projects: [],
+                noteKey: "githubNote"
+            },
+            {
+                id: "visualstudio",
+                name: "Visual Studio",
+                projects: [],
+                noteKey: "visualStudioNote"
+            }
+        ]
+    },
+    {
+        id: "systems",
+        number: "04",
+        titleKey: "categorySystems",
+        skills: [
+            {
+                id: "controllers",
+                name: "Character Controllers",
+                projects: ["nineLives"]
+            },
+            {
+                id: "enemyai",
+                name: "Enemy AI",
+                projects: ["swarmz"]
+            },
+            {
+                id: "pathfinding",
+                name: "Pathfinding",
+                projects: ["swarmz"]
+            },
+            {
+                id: "replay",
+                name: "Replay Systems",
+                projects: ["nineLives"]
+            },
+            {
+                id: "audio",
+                name: "Audio Recording",
+                projects: ["nineLives"]
+            },
+            {
+                id: "feedback",
+                name: "Gameplay Feedback",
+                projects: ["swarmz"]
+            }
+        ]
+    }
+];
+
+/* Project references */
+
+const skillProjects = {
+    nineLives: {
+        name: "9 Lives Ago",
+        descriptionKey: "skillNineLives",
+        url: null
+    },
+
+    swarmz: {
+        name: "SwarmZ",
+        descriptionKey: "skillSwarmz",
+        url: null
+    },
+
+    grappling: {
+        name: "Grappling Hook Prototype",
+        descriptionKey: "skillGrappling",
+        url: null
+    }
+};
+
+
+/* =========================
+   TECHNICAL SKILLS INTERACTION
+========================= */
+
+const skillsList = document.getElementById("skills-list");
+const reduceSkillMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+let activeSkillId = null;
+let skillIsTransitioning = false;
+
+function renderSkills({ animate = false } = {}) {
+    if (!skillsList) return;
+
+    const t = translations[language];
+    skillsList.replaceChildren();
+
+    skillsData.forEach(category => {
+        const row = document.createElement("div");
+        row.className = "skill-category";
+
+        const heading = document.createElement("div");
+        heading.className = "skill-category-heading";
+
+        const number = document.createElement("span");
+        number.className = "skill-number";
+        number.textContent = category.number;
+
+        const title = document.createElement("h3");
+        title.textContent = t[category.titleKey];
+        heading.append(number, title);
+
+        const tags = document.createElement("div");
+        tags.className = "skill-tags";
+
+        const details = document.createElement("div");
+        details.className = "skill-details";
+        details.id = "skill-details-" + category.id;
+
+        const inner = document.createElement("div");
+        inner.className = "skill-details-inner";
+        details.appendChild(inner);
+
+        const activeSkill = category.skills.find(
+            skill => skill.id === activeSkillId
+        );
+
+        category.skills.forEach(skill => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "skill-tag";
+            button.dataset.skillId = skill.id;
+            button.textContent = skill.name;
+            button.setAttribute(
+                "aria-expanded", String(activeSkillId === skill.id)
+            );
+            button.setAttribute("aria-controls", details.id);
+            button.addEventListener("click", () => selectSkill(skill.id));
+            tags.appendChild(button);
+        });
+
+        if (activeSkill) {
+            const panelTitle = document.createElement("h4");
+            panelTitle.className = "skill-details-title";
+            panelTitle.textContent = activeSkill.name;
+            inner.appendChild(panelTitle);
+
+            activeSkill.projects.forEach(projectId => {
+                const project = skillProjects[projectId];
+                if (!project) return;
+
+                const item = document.createElement("div");
+                item.className = "skill-project";
+
+                const name = document.createElement("h4");
+                name.textContent = project.name;
+
+                const description = document.createElement("p");
+                description.textContent = t[project.descriptionKey];
+                item.append(name, description);
+
+                if (project.url) {
+                    const link = document.createElement("a");
+                    link.href = project.url;
+                    link.textContent = t.viewProject;
+                    item.appendChild(link);
+                }
+                inner.appendChild(item);
+            });
+
+            if (activeSkill.noteKey) {
+                const note = document.createElement("p");
+                note.textContent = t[activeSkill.noteKey];
+                inner.appendChild(note);
+            }
+        }
+
+        row.append(heading, tags, details);
+        skillsList.appendChild(row);
+
+        if (activeSkill) {
+            if (animate && !reduceSkillMotion.matches) {
+                // Two frames ensure the browser sees the collapsed state first.
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        if (details.isConnected) details.classList.add("open");
+                    });
+                });
+            } else {
+                details.classList.add("open");
+            }
+        }
+    });
+}
+
+function focusSkillButton(skillId) {
+    const button = [...skillsList.querySelectorAll(".skill-tag")]
+        .find(el => el.dataset.skillId === skillId);
+    button?.focus({ preventScroll: true });
+}
+
+function selectSkill(skillId) {
+    if (skillIsTransitioning || !skillsList) return;
+
+    const nextSkillId = activeSkillId === skillId ? null : skillId;
+    const openPanel = skillsList.querySelector(".skill-details.open");
+
+    const finish = () => {
+        activeSkillId = nextSkillId;
+        renderSkills({ animate: true });
+        focusSkillButton(skillId);
+        skillIsTransitioning = false;
+    };
+
+    // If no panel is open, or reduced motion is enabled, update immediately.
+    if (!openPanel || reduceSkillMotion.matches) {
+        finish();
+        return;
+    }
+
+    skillIsTransitioning = true;
+    let finished = false;
+    let fallback;
+
+    const completeOnce = () => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(fallback);
+        openPanel.removeEventListener("transitionend", onTransitionEnd);
+        finish();
+    };
+
+    const onTransitionEnd = event => {
+        if (event.target === openPanel &&
+            event.propertyName === "grid-template-rows") {
+            completeOnce();
+        }
+    };
+
+    openPanel.addEventListener("transitionend", onTransitionEnd);
+    openPanel.classList.remove("open");
+
+    // Fallback if a transition is cancelled or disabled by the browser.
+    fallback = setTimeout(completeOnce, 450);
+}
+
+
+/* =========================
+   CONTACT & FOOTER
+========================= */
+
+const contactEmail = "mael.perrot@outlook.com";
+
+const emailLink = document.getElementById("contact-email-link");
+const emailText = document.getElementById("contact-email-text");
+const copyEmailButton = document.getElementById("contact-copy-email");
+const footerYear = document.getElementById("footer-year");
+
+// Display email
+if (emailText) {
+    emailText.textContent = contactEmail;
+}
+
+// Email button
+if (emailLink) {
+    emailLink.href =
+        `mailto:${contactEmail}?subject=` +
+        encodeURIComponent("Game Programming Opportunity");
+}
+
+// Automatic copyright year
+if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+}
+
+// Copy email interaction
+if (copyEmailButton) {
+    copyEmailButton.addEventListener("click", async () => {
+        try {
+            await navigator.clipboard.writeText(contactEmail);
+
+            const label = copyEmailButton.querySelector(
+                '[data-i18n="contactCopyEmail"]'
+            );
+
+            if (label) {
+                label.textContent =
+                    translations[language].contactEmailCopied;
+            }
+
+        } catch (error) {
+            console.warn("Could not copy email:", error);
+        }
+    });
+}
+
+
+// Initialize only after the skills data and functions have been defined.
 setLanguage(language);
