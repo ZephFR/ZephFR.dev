@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1068 533.67">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        fill: #3c3c3b;
+        stroke: #1d1d1b;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #f1865d;
+        stroke: #fff;
+        stroke-width: 4px;
+      }
+
+      .cls-4 {
+        fill: #fff;
+        font-family: TikTokSans-ExtraBold, 'TikTok Sans';
+        font-size: 24px;
+        font-variation-settings: 'opsz' 36, 'wdth' 100, 'wght' 800, 'slnt' 0;
+        font-weight: 700;
+        opacity: .97;
+      }
+
+      .cls-5 {
+        letter-spacing: -.02em;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <rect class="cls-2" x=".5" y=".5" width="1067" height="532.67" rx="33.67" ry="33.67"/>
+    <circle class="cls-3" cx="534" cy="266.83" r="50"/>
+    <text class="cls-4" transform="translate(496.65 271.17)"><tspan x="0" y="0">Pl</tspan><tspan class="cls-5" x="21.58" y="0">a</tspan><tspan class="cls-1" x="34.39" y="0">y</tspan><tspan x="47.69" y="0">er</tspan></text>
+  </g>
+</svg>

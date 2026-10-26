@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1068 533.67">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        fill: #282d38;
+        stroke: #1d1d1b;
+      }
+
+      .cls-7, .cls-8, .cls-9, .cls-10, .cls-11 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 11.7 11.7;
+      }
+
+      .cls-8, .cls-9, .cls-10, .cls-11 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 4px;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4, .cls-13 {
+        font-family: TikTokSans-ExtraBold, 'TikTok Sans';
+        font-variation-settings: 'opsz' 36, 'wdth' 100, 'wght' 800, 'slnt' 0;
+        font-weight: 700;
+      }
+
+      .cls-4, .cls-6 {
+        font-size: 24px;
+        opacity: .97;
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-16 {
+        letter-spacing: 0em;
+      }
+
+      .cls-17 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-10 {
+        stroke-dasharray: 12.08 12.08;
+      }
+
+      .cls-18 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-5 {
+        opacity: .3;
+      }
+
+      .cls-19 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-20, .cls-13 {
+        fill: #f1865d;
+      }
+
+      .cls-21 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-13 {
+        font-size: 48px;
+      }
+
+      .cls-6 {
+        font-family: TikTokSans-Medium, 'TikTok Sans';
+        font-variation-settings: 'opsz' 36, 'wdth' 100, 'wght' 500, 'slnt' 0;
+        font-weight: 500;
+      }
+
+      .cls-11 {
+        stroke-dasharray: 11.92 11.92;
+      }
+
+      .cls-22 {
+        letter-spacing: -.03em;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <rect class="cls-7" x=".5" y=".5" width="1067" height="532.67" rx="33.67" ry="33.67"/>
+    <g id="Local">
+      <circle class="cls-10" cx="380.17" cy="266.83" r="100"/>
+      <circle class="cls-5" cx="380.17" cy="266.83" r="100"/>
+      <circle class="cls-20" cx="380.17" cy="266.83" r="50"/>
+    </g>
+    <text class="cls-13" transform="translate(518.78 281.19)"><tspan x="0" y="0">+</tspan></text>
+    <g id="Directional">
+      <polygon class="cls-5" points="650.5 266.83 920.83 32.72 920.83 500.95 650.5 266.83"/>
+      <g>
+        <line class="cls-9" x1="650.5" y1="266.83" x2="655.04" y2="262.91"/>
+        <line class="cls-11" x1="664.04" y1="255.1" x2="911.79" y2="40.55"/>
+        <polyline class="cls-9" points="916.3 36.65 920.83 32.72 920.83 38.72"/>
+        <line class="cls-8" x1="920.83" y1="50.42" x2="920.83" y2="489.1"/>
+        <polyline class="cls-9" points="920.83 494.95 920.83 500.95 916.3 497.02"/>
+        <line class="cls-11" x1="907.29" y1="489.22" x2="659.54" y2="274.66"/>
+        <line class="cls-9" x1="655.04" y1="270.76" x2="650.5" y2="266.83"/>
+      </g>
+      <circle class="cls-20" cx="650.5" cy="266.83" r="50"/>
+      <g>
+        <line class="cls-9" x1="700.5" y1="266.83" x2="756.96" y2="266.83"/>
+        <polygon class="cls-3" points="751.13 286.78 785.67 266.84 751.13 246.89 751.13 286.78"/>
+      </g>
+    </g>
+    <text class="cls-4" transform="translate(618.03 273.02)"><tspan x="0" y="0">Pl</tspan><tspan class="cls-21" x="21.58" y="0">a</tspan><tspan class="cls-1" x="34.39" y="0">y</tspan><tspan x="47.69" y="0">er</tspan></text>
+    <text class="cls-4" transform="translate(341.07 270.3)"><tspan x="0" y="0">Pl</tspan><tspan class="cls-21" x="21.58" y="0">a</tspan><tspan class="cls-1" x="34.39" y="0">y</tspan><tspan x="47.69" y="0">er</tspan></text>
+    <text class="cls-6" transform="translate(314.59 405.5)"><tspan class="cls-18" x="0" y="0">L</tspan><tspan class="cls-16" x="11.4" y="0">ocal </tspan><tspan class="cls-2" x="60.7" y="0">R</tspan><tspan class="cls-12" x="75.48" y="0">e</tspan><tspan class="cls-15" x="88.32" y="0">v</tspan><tspan x="100.61" y="0">eal</tspan></text>
+    <text class="cls-6" transform="translate(556.22 405.5)"><tspan x="0" y="0">Di</tspan><tspan class="cls-17" x="21.53" y="0">r</tspan><tspan x="29.09" y="0">ectional </tspan><tspan class="cls-22" x="118.1" y="0">R</tspan><tspan class="cls-14" x="132.89" y="0">e</tspan><tspan class="cls-19" x="145.72" y="0">v</tspan><tspan x="158.01" y="0">eal</tspan></text>
+  </g>
+</svg>

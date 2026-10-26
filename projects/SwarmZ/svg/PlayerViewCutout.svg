@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1068 533.67">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        fill: #3c3c3b;
+        stroke: #1d1d1b;
+      }
+
+      .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-6 {
+        stroke-dasharray: 11.7 11.7;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 4px;
+      }
+
+      .cls-3 {
+        font-family: TikTokSans-ExtraBold, 'TikTok Sans';
+        font-size: 24px;
+        font-variation-settings: 'opsz' 36, 'wdth' 100, 'wght' 800, 'slnt' 0;
+        font-weight: 700;
+        opacity: .97;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 12.08 12.08;
+      }
+
+      .cls-4 {
+        opacity: .3;
+      }
+
+      .cls-10 {
+        fill: #f1865d;
+      }
+
+      .cls-11 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-9 {
+        stroke-dasharray: 11.92 11.92;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <rect class="cls-5" x=".5" y=".5" width="1067" height="532.67" rx="33.67" ry="33.67"/>
+    <g id="PlayerFullView">
+      <g>
+        <g id="Local">
+          <circle class="cls-8" cx="521.87" cy="266.39" r="100"/>
+          <circle class="cls-4" cx="521.87" cy="266.39" r="100"/>
+          <circle class="cls-10" cx="521.87" cy="266.39" r="50"/>
+        </g>
+        <g id="Directional">
+          <polygon class="cls-4" points="521.87 266.39 792.2 32.27 792.2 500.5 521.87 266.39"/>
+          <g>
+            <line class="cls-7" x1="521.87" y1="266.39" x2="526.4" y2="262.46"/>
+            <line class="cls-9" x1="535.41" y1="254.66" x2="783.16" y2="40.1"/>
+            <polyline class="cls-7" points="787.67 36.2 792.2 32.27 792.2 38.27"/>
+            <line class="cls-6" x1="792.2" y1="49.97" x2="792.2" y2="488.65"/>
+            <polyline class="cls-7" points="792.2 494.5 792.2 500.5 787.67 496.57"/>
+            <line class="cls-9" x1="778.66" y1="488.77" x2="530.91" y2="274.22"/>
+            <line class="cls-7" x1="526.4" y1="270.32" x2="521.87" y2="266.39"/>
+          </g>
+          <circle class="cls-10" cx="521.87" cy="266.39" r="50"/>
+          <g>
+            <line class="cls-7" x1="571.87" y1="266.39" x2="628.33" y2="266.39"/>
+            <polygon class="cls-2" points="622.5 286.33 657.03 266.39 622.5 246.44 622.5 286.33"/>
+          </g>
+        </g>
+      </g>
+      <text class="cls-3" transform="translate(486.68 273.72)"><tspan x="0" y="0">Pl</tspan><tspan class="cls-11" x="21.58" y="0">a</tspan><tspan class="cls-1" x="34.39" y="0">y</tspan><tspan x="47.69" y="0">er</tspan></text>
+    </g>
+  </g>
+</svg>

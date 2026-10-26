@@ -55,6 +55,7 @@ swarmzDescription:
     "ennemis, brouillard directionnel et indicateurs " +
     "de gameplay.",
 
+swarmzProjectButton: "Voir le projet ↗",
 
 skillsEyebrow: "CE QUE J'UTILISE",
 skillsHeading: "Compétences techniques.",
@@ -184,7 +185,7 @@ swarmzDescription:
     "and gameplay feedback indicators.",
 
 playSwarmz: "Play SwarmZ ↗",
-
+swarmzProjectButton: "View Project ↗",
 
 skillsEyebrow: "WHAT I WORK WITH",
 skillsHeading: "Technical Skills.",

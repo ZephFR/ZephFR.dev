@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SwarmZ — projet de Game Programming :
+          IA ennemie, pathfinding, fog of war et gameplay feedback.">
+
+    <title>SwarmZ — ZephFR.dev</title>
+
+    <link rel="icon" href="../../img/thumbnail.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Main portfolio CSS -->
+    <link rel="stylesheet" href="../../style/style.css">
+
+    <!-- SwarmZ page CSS -->
+    <link rel="stylesheet" href="swarmz.css">
+
+    <script src="swarmz.js" defer></script>
+</head>
+
+<body class="swarmz-page">
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="project-topbar section-shell">
+
+    <a class="site-logo" href="../../index.html#home">
+        ZephFR<span>.</span>dev
+    </a>
+
+    <a class="back-link"
+       href="../../index.html#projects"
+       data-i18n="back">
+        ← Retour aux projets
+    </a>
+
+    <div class="language-switch"
+         role="group"
+         aria-label="Language / Langue">
+
+        <button class="lang-button"
+                type="button"
+                data-lang="fr"
+                aria-pressed="true">
+            FR
+        </button>
+
+        <span>/</span>
+
+        <button class="lang-button"
+                type="button"
+                data-lang="en"
+                aria-pressed="false">
+            EN
+        </button>
+
+    </div>
+
+</header>
+
+<main>
+
+    <!-- =========================
+         PROJECT HERO
+    ========================= -->
+
+    <section class="project-hero section-shell"
+             aria-labelledby="project-title">
+
+        <p class="eyebrow">
+            CONSTRUCT 3 · TOP-DOWN SHOOTER
+        </p>
+
+        <h1 id="project-title">
+            SwarmZ<span class="dot">.</span>
+        </h1>
+
+        <p class="hero-lead" data-i18n="lead">
+            Un shoot'em up 2D conçu autour de la pression
+            ennemie, d'une visibilité directionnelle
+            et du scoring arcade.
+        </p>
+
+        <!-- Replace this GIF with a gameplay video later -->
+        <div class="hero-media">
+
+            <iframe class="gameplay-video"
+            src="https://www.youtube-nocookie.com/embed/mWgDWCS27hg?si=VyHyoRUl1wKYanQB"
+            title="SwarmZ — Gameplay"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Project information -->
+
+        <div class="facts">
+
+            <div>
+                <small data-i18n="roleLabel">RÔLE</small>
+                <strong>Gameplay Programming</strong>
+            </div>
+
+            <div>
+                <small data-i18n="engineLabel">MOTEUR</small>
+                <strong>Construct 3</strong>
+            </div>
+
+            <div>
+                <small data-i18n="contextLabel">CONTEXTE</small>
+                <strong data-i18n="context">
+                    Projet étudiant en équipe · ICAN
+                </strong>
+            </div>
+
+            <div>
+                <small data-i18n="focusLabel">COMPÉTENCES</small>
+                <strong>
+                    Enemy AI · Pathfinding · Fog of War · Score
+                </strong>
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <a class="project-button primary"
+               href="../../games/TopDownShooter/index.html"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-i18n="play">
+                Jouer dans le navigateur ↗
+            </a>
+
+            <a class="project-button secondary"
+               href="#technical"
+               data-i18n="technicalLink">
+                Découvrir mon travail ↓
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         OVERVIEW
+    ========================= -->
+
+    <section class="section-shell project-section"
+             id="overview">
+
+        <p class="eyebrow">01 / OVERVIEW</p>
+
+        <h2 data-i18n="overviewTitle">
+            Le projet
+        </h2>
+
+        <p data-i18n="overviewText">
+            SwarmZ est un shoot'em up 2D top-down
+            réalisé en équipe. Mon travail s'est concentré
+            sur les comportements ennemis, le pathfinding,
+            le brouillard directionnel et les informations
+            affichées au joueur.
+        </p>
+
+        <div class="project-note">
+
+            <strong data-i18n="responsibilityTitle">
+                Ma contribution
+            </strong>
+
+            <p data-i18n="responsibilityText">
+                Les sections suivantes détaillent uniquement
+                les systèmes sur lesquels j'ai travaillé,
+                et non l'intégralité du développement du jeu.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECHNICAL CONTRIBUTIONS
+    ========================= -->
+
+    <section class="section-shell project-section"
+             id="technical">
+
+        <p class="eyebrow">02 / MY CONTRIBUTIONS</p>
+
+        <h2 data-i18n="contribTitle">
+            Mes contributions techniques
+        </h2>
+
+        <!-- Shortcuts -->
+
+        <div class="quick-links">
+            <a href="#fog">Fog of War ↗</a>
+            <a href="#ai">Enemy AI & Pathfinding ↗</a>
+            <a href="#hud">Gameplay Feedback ↗</a>
+        </div>
+        
+        
+        <!-- =========================
+        FOG OF WAR
+        ========================= -->
+        
+        <
+<article class="breakdown" id="fog">
+
+    <!-- =========================
+         01 - INTRODUCTION
+    ========================= -->
+
+    <div class="breakdown-copy">
+
+        <span class="chapter">
+            01 / VISIBILITY
+        </span>
+
+        <h3>Directional Fog of War</h3>
+
+        <p data-i18n="fogText">
+            Pour SwarmZ, j'ai développé un système de
+            brouillard de guerre directionnel à l'aide
+            du composant Drawing Canvas de Construct 3.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         02 - FOG RENDERING
+    ========================= -->
+
+    <section class="fog-section">
+
+        <div class="breakdown-copy">
+
+            <h4 data-i18n="fogRenderingTitle">
+                Fog Rendering
+            </h4>
+
+            <p data-i18n="fogRendering">
+                À chaque frame, le brouillard est
+                redessiné sous la forme d'un voile noir
+                semi-opaque. Les zones visibles sont
+                ensuite découpées à l'aide de deux
+                formes : une zone circulaire autour du
+                joueur et un cône orienté dans la
+                direction de son regard.
+            </p>
+
+            <p data-i18n="fogCompositing">
+                Ces découpes utilisent le mode de fusion
+                Destination Out, qui permet de retirer
+                les parties correspondantes du brouillard.
+                Le résultat est ensuite superposé
+                au gameplay.
+            </p>
+
+        </div>
+
+
+        <!-- FOG ILLUSTRATIONS -->
+
+        <div class="fog-steps">
+
+            <!-- STEP 1 : DRAW FOG -->
+
+            <figure class="fog-step">
+
+                <img
+                    src="svg/PlayerInFog.svg"
+                    alt="FogCanvas filled with a semi-transparent black overlay"
+                    loading="lazy">
+
+                <figcaption data-i18n="fogStepDraw">
+                    01 — Dessin du brouillard
+                </figcaption>
+
+            </figure>
+
+
+            <!-- TRANSITION 1 -->
+
+            <div class="fog-transition" aria-hidden="true">
+
+                <span class="fog-arrow"></span>
+
+                <span data-i18n="fogTransitionCut">
+                    Destination Out — Découpe des zones visibles
+                </span>
+
+            </div>
+
+
+            <!-- STEP 2 : CUTOUT -->
+
+            <figure class="fog-step">
+
+                <img
+                    src="svg/PlayerViewCutout.svg"
+                    alt="Circular and directional areas cut out from the fog"
+                    loading="lazy">
+
+                <figcaption data-i18n="fogStepCut">
+                    02 — Découpe de visibilité
+                </figcaption>
+
+            </figure>
+
+
+            <!-- TRANSITION 2 -->
+
+            <div class="fog-transition" aria-hidden="true">
+
+                <span class="fog-arrow"></span>
+
+                <span data-i18n="fogTransitionRender">
+                    Superposition avec le gameplay
+                </span>
+
+            </div>
+
+
+            <!-- STEP 3 : FINAL RESULT -->
+
+            <figure class="fog-step">
+
+                <img
+                    src="img/InGameFog.png"
+                    alt="Final in-game fog of war rendering"
+                    loading="lazy">
+
+                <figcaption data-i18n="fogStepFinal">
+                    03 — Rendu final
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         03 - ENEMY VISIBILITY
+    ========================= -->
+
+    <section class="fog-section">
+
+        <div class="breakdown-copy">
+
+            <h4 data-i18n="fogEnemyTitle">
+                Enemy Visibility
+            </h4>
+
+            <p data-i18n="fogEnemyVisibility">
+                L'affichage des ennemis est géré
+                séparément à l'aide de deux comportements
+                Line of Sight : l'un à courte portée
+                autour du joueur, et l'autre à plus
+                longue portée, correspondant au cône
+                de vision directionnel.
+
+                Lorsqu'un ennemi est détecté par
+                l'un de ces champs de vision, il devient
+                visible. Dans le cas contraire,
+                il reste masqué.
+            </p>
+
+        </div>
+
+
+        <!-- INTERACTIVE DEMONSTRATION -->
+
+        <div class="demo-card">
+
+            <div class="demo-head">
+
+                <strong data-i18n="demoTitle">
+                    Schéma interactif de visibilité
+                </strong>
+
+                <span data-i18n="demoSimplified">
+                    Représentation simplifiée
+                </span>
+
+            </div>
+
+
+            <svg
+                id="fog-demo"
+                viewBox="0 0 560 330"
+                role="img"
+                aria-label="Simplified directional visibility demonstration">
+
+                <defs>
+
+                    <pattern
+                        id="demo-grid"
+                        width="28"
+                        height="28"
+                        patternUnits="userSpaceOnUse">
+
+                        <path
+                            d="M28 0H0V28"
+                            fill="none"
+                            stroke="#3A4151"
+                            stroke-width="1"/>
+
+                    </pattern>
+
+                </defs>
+
+
+                <!-- BACKGROUND -->
+
+                <rect
+                    width="560"
+                    height="330"
+                    fill="#1C212C"/>
+
+                <rect
+                    width="560"
+                    height="330"
+                    fill="url(#demo-grid)"/>
+
+
+                <!-- SHORT-RANGE VISION -->
+
+                <circle
+                    cx="280"
+                    cy="165"
+                    r="65"
+                    fill="#FBA17F"
+                    fill-opacity="0.12"
+                    stroke="#FBA17F"
+                    stroke-opacity="0.55"
+                    stroke-width="2"
+                    stroke-dasharray="5 6"/>
+
+
+                <!-- DIRECTIONAL VISION -->
+
+                <g
+                    id="vision-rotator"
+                    transform="rotate(0 280 165)">
+
+                    <path
+                        d="M280 165 L505 35 A260 260 0 0 1 505 295 Z"
+                        fill="#FBA17F"
+                        fill-opacity="0.23"
+                        stroke="#F0865D"
+                        stroke-width="2"
+                        stroke-dasharray="8 6"/>
+
+                    <!-- DIRECTION ARROW -->
+
+                    <path
+                        d="M280 165 L318 165"
+                        stroke="#FFF4E8"
+                        stroke-width="4"/>
+
+                    <path
+                        d="M311 158 L320 165 L311 172"
+                        stroke="#FFF4E8"
+                        stroke-width="3"
+                        fill="none"/>
+
+                </g>
+
+
+                <!-- ENEMIES -->
+
+                <g class="demo-enemy" data-x="405" data-y="140">
+
+                    <circle cx="405" cy="140" r="14"/>
+
+                    <text x="405" y="116">A</text>
+
+                </g>
+
+                <g class="demo-enemy" data-x="164" data-y="79">
+
+                    <circle cx="164" cy="79" r="14"/>
+
+                    <text x="164" y="55">B</text>
+
+                </g>
+
+                <g class="demo-enemy" data-x="390" data-y="278">
+
+                    <circle cx="390" cy="278" r="14"/>
+
+                    <text x="390" y="254">C</text>
+
+                </g>
+
+
+                <!-- PLAYER -->
+
+                <circle
+                    cx="280"
+                    cy="165"
+                    r="18"
+                    fill="#F0865D"
+                    stroke="#FFF4E8"
+                    stroke-width="3"/>
+
+                <text
+                    x="280"
+                    y="205"
+                    text-anchor="middle"
+                    fill="#FFF4E8"
+                    font-size="14">
+                    Player
+                </text>
+
+            </svg>
+
+
+            <!-- SLIDER -->
+
+            <label for="facing-angle">
+
+                <span data-i18n="angleLabel">
+                    Orientation du joueur
+                </span>
+
+                <output id="angle-output">
+                    0°
+                </output>
+
+            </label>
+
+            <input
+                type="range"
+                id="facing-angle"
+                min="-180"
+                max="180"
+                step="5"
+                value="0">
+
+
+            <!-- LEGEND -->
+
+            <p class="demo-legend">
+
+                <span class="visible-dot"></span>
+
+                <span data-i18n="visible">
+                    Ennemi visible
+                </span>
+
+                <span class="hidden-dot"></span>
+
+                <span data-i18n="hidden">
+                    Ennemi masqué
+                </span>
+
+            </p>
+
+        </div>
+
+        <p class="fog-demo-note" data-i18n="fogDemoNote">
+            Cette démonstration est une représentation
+            simplifiée des zones de détection,
+            et non une reproduction du rendu
+            interne de Construct 3.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         04 - INSPIRATION
+    ========================= -->
+
+    <p class="reference">
+
+        <span data-i18n="inspiration">
+            Inspiration :
+        </span>
+
+        <a
+            href="https://projectzomboid.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Project Zomboid ↗
+        </a>
+
+        <span data-i18n="referenceNote">
+            Une inspiration de game design,
+            pas une reproduction de son implémentation.
+        </span>
+
+    </p>
+
+</article>
+
+
+
+        <!-- =========================
+             ENEMY AI
+        ========================= -->
+
+        <article class="breakdown" id="ai">
+
+            <div class="breakdown-copy">
+
+                <span class="chapter">
+                    02 / BEHAVIOR
+                </span>
+
+                <h3>Enemy AI & Pathfinding</h3>
+
+                <p data-i18n="aiText">
+                    J'ai contribué à la logique ennemie,
+                    notamment aux comportements des ennemis
+                    à distance et à leurs déplacements.
+                    Un schéma de trajectoire ou un diagramme
+                    des états pourra documenter les conditions
+                    réelles utilisées.
+                </p>
+
+            </div>
+
+            <figure class="technical-illustration">
+
+    <img
+        src="img\SwarmZ FOW.png"
+        alt="Schéma montrant la trajectoire d'un ennemi
+             contournant des obstacles pour rejoindre le joueur."
+        loading="lazy"
+        decoding="async">
+
+    <figcaption data-i18n="pathfindingCaption">
+        Représentation simplifiée du système de
+        déplacement des ennemis de SwarmZ.
+    </figcaption>
+
+</figure>
+
+        </article>
+
+
+        <!-- =========================
+             GAMEPLAY FEEDBACK
+        ========================= -->
+
+        <article class="breakdown" id="hud">
+
+            <div class="breakdown-copy">
+
+                <span class="chapter">
+                    03 / FEEDBACK
+                </span>
+
+                <h3>Gameplay Feedback & HUD</h3>
+
+                <p data-i18n="hudText">
+                    J'ai travaillé sur les indicateurs
+                    d'arrivée de projectiles, la perception
+                    sonore des ennemis cachés par le brouillard,
+                    ainsi que sur le score et le multiplicateur.
+                </p>
+
+            </div>
+
+            <div class="illustration-placeholder hud-example">
+
+                <div>
+                    <span>!</span>
+                    <span>♪</span>
+                    <span>x3</span>
+                </div>
+
+                <p data-i18n="hudCaption">
+                    Exemples d'indicateurs abstraits.
+                    Ajouter ensuite une vraie capture
+                    annotée du HUD de SwarmZ.
+                </p>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =========================
+         CHALLENGES & LESSONS
+    ========================= -->
+
+    <section class="section-shell project-section"
+             id="lessons">
+
+        <p class="eyebrow">03 / PROCESS</p>
+
+        <h2 data-i18n="lessonsTitle">
+            Difficultés et apprentissages
+        </h2>
+
+        <p data-i18n="lessonsText">
+            À compléter avec des exemples concrets :
+            problème rencontré, solution testée,
+            résultat obtenu.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         TEAM & CREDITS
+    ========================= -->
+
+    <section class="section-shell project-section"
+             id="team">
+
+        <p class="eyebrow">04 / TEAM</p>
+
+        <h2>Team & Credits</h2>
+
+        <p data-i18n="teamIntro">
+            Projet réalisé en équipe. Les noms,
+            rôles et portfolios des autres membres
+            seront ajoutés avec leur accord.
+        </p>
+
+        <div class="credits">
+
+            <div class="credit">
+
+                <strong>Maël Perrot</strong>
+
+                <span>Gameplay Programming</span>
+
+                <p>
+                    Enemy AI · Pathfinding · Fog of War
+                    · Gameplay Feedback
+                </p>
+
+            </div>
+
+            <!-- Replace with real teammates -->
+
+            <div class="credit placeholder-credit">
+
+                <strong data-i18n="teamPlaceholder">
+                    Autres membres de l'équipe
+                </strong>
+
+                <span data-i18n="teamRole">
+                    Noms, rôles et liens vers
+                    leurs portfolios à compléter
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PLAY & RESOURCES
+    ========================= -->
+
+    <section class="section-shell project-section resources"
+             id="resources">
+
+        <p class="eyebrow">05 / RESOURCES</p>
+
+        <h2 data-i18n="resourcesTitle">
+            Jouer et en savoir plus
+        </h2>
+
+        <p data-i18n="resourcesIntro">
+            Teste le jeu ou découvre la documentation
+            de conception associée au projet.
+        </p>
+
+        <div class="actions">
+
+            <a class="project-button primary"
+               href="../../games/TopDownShooter/index.html"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-i18n="play">
+                Jouer dans le navigateur ↗
+            </a>
+
+        </div>
+
+        <div class="resource-list">
+
+            <div>
+
+                <strong>Game Overview Document</strong>
+
+                <p data-i18n="godPending">
+                    Document PDF à ajouter après
+                    vérification des autorisations
+                    de partage.
+                </p>
+
+            </div>
+
+            <div>
+
+                <strong>itch.io / Steam</strong>
+
+                <p data-i18n="storePending">
+                    Ajouter ici uniquement les liens
+                    vers les pages officielles
+                    existantes du projet.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECT NAVIGATION
+    ========================= -->
+
+    <nav class="next-project section-shell"
+         aria-label="Project navigation">
+
+        <a href="../../index.html#projects"
+           data-i18n="back">
+            ← Retour aux projets
+            
+        </a>
+
+    </nav>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="project-footer">
+
+    <div class="section-shell">
+
+        <span>
+            © <span id="year"></span> Maël Perrot
+        </span>
+
+        <a href="../../index.html#home"
+           data-i18n="backHome">
+            Retour à l'accueil ↑
+        </a>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
