@@ -164,12 +164,14 @@ aiHeavyText:
             "des autorisations de partage.",
 
         storePending:
-            "Ajouter ici uniquement les liens vers les pages " +
-            "officielles existantes du projet.",
+            "Nous travaillons encore sur la page officielle du projet, un lien sera ajouté dès qu'elle sera disponible. ",
 
             erwannName: "Erwann Loury",
 erwannRole: "Game Design · Sound Design",
 erwannPortfolio: "Voir son portfolio ↗",
+
+nilName: "Nil Augé-Dedieu",
+        nilRole: "Game Art - Sound Design",
     },
 
 
@@ -321,16 +323,19 @@ aiHeavyText:
             "Try the game or explore the project's " +
             "design documentation.",
 
-            
+
         readGOD:
             "Read the GOD ↗",
 
         storePending:
-            "Only add links to official existing project pages here.",
+            "We are still working on the official project page, a link will be added once it's available. " ,
 
             erwannName: "Erwann Loury",
 erwannRole: "Game Design · Sound Design",
 erwannPortfolio: "See his portfolio ↗",
+
+        nilName: "Nil Augé-Dedieu",
+        nilRole: "Game Art - Sound Design",
     }
 };
 
