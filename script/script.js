@@ -122,6 +122,9 @@ contactItch: "itch.io ↗",
 footerDescription: "Maël Perrot · Game Programming",
 footerContact: "Contact",
 footerBackTop: "Retour en haut ↑",
+erwannName: "Erwann Loury",
+erwannRole: "Game Design · Sound Design",
+erwannPortfolio: "Voir son portfolio ↗",
 
 
 playSwarmz: "Jouer à SwarmZ ↗",
@@ -251,6 +254,7 @@ contactItch: "itch.io ↗",
 footerDescription: "Maël Perrot · Game Programming",
 footerContact: "Contact",
 footerBackTop: "Back to top ↑",
+
 
 
     pauseVideo: "Pause video", playVideo: "Play video"
@@ -736,6 +740,8 @@ if (mobileMenuButton && mobileNavigation) {
 
     setMobileMenu(false);
 }
+
+
 
 
 // Initialize only after the skills data and functions have been defined.

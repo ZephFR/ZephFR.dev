@@ -137,7 +137,7 @@
             <div>
                 <small data-i18n="focusLabel">COMPÉTENCES</small>
                 <strong>
-                    Enemy AI · Pathfinding · Fog of War · Score
+                    Enemy AI · Pathfinding · Fog of War
                 </strong>
             </div>
 
@@ -629,43 +629,195 @@
              ENEMY AI
         ========================= -->
 
-        <article class="breakdown" id="ai">
+        
+<article class="breakdown" id="ai">
 
-            <div class="breakdown-copy">
+    <div class="breakdown-copy">
 
-                <span class="chapter">
-                    02 / BEHAVIOR
-                </span>
+        <span class="chapter">02 / ENEMY AI</span>
 
-                <h3>Enemy AI & Pathfinding</h3>
+        <h3 data-i18n="aiTitle">
+            Enemy AI & Pathfinding
+        </h3>
 
-                <p data-i18n="aiText">
-                    J'ai contribué à la logique ennemie,
-                    notamment aux comportements des ennemis
-                    à distance et à leurs déplacements.
-                    Un schéma de trajectoire ou un diagramme
-                    des états pourra documenter les conditions
-                    réelles utilisées.
-                </p>
+        <p data-i18n="aiIntro"></p>
+
+    </div>
+
+    <!-- TARGET ACQUISITION -->
+
+    <section class="ai-section">
+
+        <div class="breakdown-copy">
+            <h4 data-i18n="aiTargetTitle">
+                Target Acquisition
+            </h4>
+
+            <p data-i18n="aiTargetText"></p>
+        </div>
+
+        <figure class="ai-illustration">
+            <img
+                src="svg/PlayerDetection.svg"
+                alt="Target acquisition and persistent player tracking"
+                loading="lazy">
+        </figure>
+
+    </section>
+
+    <!-- PATHFINDING -->
+
+    <section class="ai-section">
+
+        <div class="breakdown-copy">
+            <h4 data-i18n="aiNavigationTitle">
+                Navigation & Obstacles
+            </h4>
+
+            <p data-i18n="aiNavigationText"></p>
+        </div>
+
+        <figure class="ai-illustration">
+            <img
+                src="svg/pathfinding.svg"
+                alt="Enemy navigation around building obstacles"
+                loading="lazy">
+        </figure>
+
+    </section>
+
+    <!-- ENEMY BEHAVIORS -->
+
+    <section class="ai-section">
+
+        <div class="breakdown-copy">
+            <h4 data-i18n="aiVariantsTitle">
+                Enemy Behaviors
+            </h4>
+
+            <p data-i18n="aiVariantsText"></p>
+        </div>
+
+        <div class="enemy-showcase">
+
+            <div class="enemy-tabs"
+                 role="tablist"
+                 aria-label="Enemy types">
+
+                <button
+                    class="enemy-tab is-active"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="enemy-panel-dog"
+                    id="enemy-tab-dog"
+                    data-enemy="dog"
+                    data-i18n="aiDogTitle">
+                    Dog
+                </button>
+
+                <button
+                    class="enemy-tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="enemy-panel-ranged"
+                    id="enemy-tab-ranged"
+                    data-enemy="ranged"
+                    data-i18n="aiRangedTitle">
+                    Ranged
+                </button>
+
+                <button
+                    class="enemy-tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="enemy-panel-heavy"
+                    id="enemy-tab-heavy"
+                    data-enemy="heavy"
+                    data-i18n="aiHeavyTitle">
+                    Heavy
+                </button>
 
             </div>
 
-            <figure class="technical-illustration">
+            <!-- DOG -->
 
-    <img
-        src="img\SwarmZ FOW.png"
-        alt="Schéma montrant la trajectoire d'un ennemi
-             contournant des obstacles pour rejoindre le joueur."
-        loading="lazy"
-        decoding="async">
+            <section
+                class="enemy-panel is-active"
+                id="enemy-panel-dog"
+                role="tabpanel"
+                aria-labelledby="enemy-tab-dog">
 
-    <figcaption data-i18n="pathfindingCaption">
-        Représentation simplifiée du système de
-        déplacement des ennemis de SwarmZ.
-    </figcaption>
+                <h5 data-i18n="aiDogTitle">Dog</h5>
 
-</figure>
+                <figure class="ai-illustration">
+                    <img
+                        src="svg/DogEnnemy.svg"
+                        alt="Dog continuously tracks the player"
+                        loading="lazy">
+                </figure>
 
+                <p data-i18n="aiDogText"></p>
+
+            </section>
+
+            <!-- RANGED -->
+
+            <section
+                class="enemy-panel"
+                id="enemy-panel-ranged"
+                role="tabpanel"
+                aria-labelledby="enemy-tab-ranged"
+                hidden>
+
+                <h5 data-i18n="aiRangedTitle">
+                    Ranged Enemy
+                </h5>
+
+                <figure class="ai-illustration">
+                    <img
+                        src="svg/SpiterEnnemy.svg"
+                        alt="Ranged enemy attack after three seconds of line of sight"
+                        loading="lazy">
+                </figure>
+
+                <p data-i18n="aiRangedText"></p>
+
+            </section>
+
+            <!-- HEAVY -->
+
+            <section
+                class="enemy-panel"
+                id="enemy-panel-heavy"
+                role="tabpanel"
+                aria-labelledby="enemy-tab-heavy"
+                hidden>
+
+                <h5 data-i18n="aiHeavyTitle">
+                    Heavy Enemy
+                </h5>
+
+                <figure class="ai-illustration">
+                    <img
+                        src="svg/TankEnnemy.svg"
+                        alt="Heavy enemy spawning and acid puddle abilities"
+                        loading="lazy">
+                </figure>
+
+                <p data-i18n="aiHeavyText"></p>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</article>
+
+</div>
         </article>
 
 
@@ -673,7 +825,7 @@
              GAMEPLAY FEEDBACK
         ========================= -->
 
-        <article class="breakdown" id="hud">
+        <!-- <article class="breakdown" id="hud">
 
             <div class="breakdown-copy">
 
@@ -713,9 +865,9 @@
     </section>
 
 
-    <!-- =========================
+    =========================
          CHALLENGES & LESSONS
-    ========================= -->
+    ========================= 
 
     <section class="section-shell project-section"
              id="lessons">
@@ -732,7 +884,7 @@
             résultat obtenu.
         </p>
 
-    </section>
+    </section> -->
 
 
     <!-- =========================
@@ -762,12 +914,30 @@
 
                 <p>
                     Enemy AI · Pathfinding · Fog of War
-                    · Gameplay Feedback
                 </p>
 
             </div>
 
             <!-- Replace with real teammates -->
+
+            <div class="credit placeholder-credit">
+
+                <strong data-i18n="ErwannName">
+                    Erwann Loury
+                </strong>
+
+                <span data-i18n="ErwannRole">
+                    Game Design - Sound Design - UI
+                </span>
+
+                <a class="project-button primary"
+               href="https://erwannloury.space/portfolio.html#:~:text=View%20the%20GOD-,Swarm%20Z,-This%20game%20was"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-i18n="erwannPortfolio">
+                Voir son portfolio ↗
+            </a>
+            </div>
 
             <div class="credit placeholder-credit">
 
@@ -823,22 +993,25 @@
 
                 <strong>Game Overview Document</strong>
 
-                <p data-i18n="godPending">
-                    Document PDF à ajouter après
-                    vérification des autorisations
-                    de partage.
+                <p data-i18n="godText">
+                    Lisez le GOD (Game Overview Document) pour découvrir
+                    les détails de conception du projet.
                 </p>
-
+                <a class="project-button primary"
+               href="docs/GOD_SwarmZ.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-i18n="readGOD">
+                Lire le GOD ↗
+            </a>
             </div>
 
             <div>
 
-                <strong>itch.io / Steam</strong>
+                <strong>itch.io</strong>
 
                 <p data-i18n="storePending">
-                    Ajouter ici uniquement les liens
-                    vers les pages officielles
-                    existantes du projet.
+                    Les liens vers les pages officielles du projet seront ajoutés ici lorsqu'elles seront disponibles.
                 </p>
 
             </div>

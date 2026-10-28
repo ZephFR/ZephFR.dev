@@ -78,17 +78,51 @@ const translations = {
         visible: "Ennemi visible",
         hidden: "Ennemi masqué",
 
-        aiText:
-            "J'ai contribué à la logique ennemie, " +
-            "notamment aux comportements des ennemis " +
-            "à distance et à leurs déplacements. " +
-            "Un schéma de trajectoire ou un diagramme " +
-            "des états pourra documenter les conditions " +
-            "réelles utilisées.",
+        aiTitle: "Enemy AI & Pathfinding",
 
-        aiCaption:
-            "Illustration schématique : à remplacer " +
-            "ou ajuster selon le pathfinding réellement implémenté.",
+aiIntro:
+    "Les ennemis de SwarmZ partagent une logique commune de ciblage " +
+    "et de navigation, puis appliquent chacun leur propre comportement " +
+    "en fonction de leur type.",
+
+aiTargetTitle: "Acquisition de cible",
+
+aiTargetText:
+    "Lorsqu'un joueur traverse le champ de vision d'un ennemi, " +
+    "il devient sa cible. Une fois ciblé, le joueur n'est jamais " +
+    "oublié : l'ennemi continue ensuite à le traquer en permanence.",
+
+aiNavigationTitle: "Navigation et obstacles",
+
+aiNavigationText:
+    "Les bâtiments du niveau sont enregistrés comme des obstacles, " +
+    "ce qui permet aux ennemis d'utiliser le pathfinding pour " +
+    "contourner l'environnement tout en poursuivant leur cible.",
+
+aiVariantsTitle: "Comportements spécifiques",
+
+aiVariantsText:
+    "Les trois ennemis partagent cette base de détection et de poursuite, " +
+    "mais chacun possède un comportement propre une fois le joueur ciblé.",
+
+aiDogTitle: "Chien",
+
+aiDogText:
+    "Le chien est un ennemi de poursuite directe. " +
+    "Il connaît toujours la position du joueur et le traque en continu.",
+
+aiRangedTitle: "Ennemi à distance",
+
+aiRangedText:
+    "L'ennemi fin tire un projectile dans la direction du joueur " +
+    "s'il conserve un visuel sur lui pendant au moins trois secondes.",
+
+aiHeavyTitle: "Ennemi lourd",
+
+aiHeavyText:
+    "L'ennemi lourd agit comme une source de pression supplémentaire : " +
+    "il peut faire apparaître les deux autres types d'ennemis " +
+    "ou créer une flaque d'acide au sol.",
 
         hudText:
             "J'ai travaillé sur les indicateurs d'arrivée " +
@@ -131,7 +165,11 @@ const translations = {
 
         storePending:
             "Ajouter ici uniquement les liens vers les pages " +
-            "officielles existantes du projet."
+            "officielles existantes du projet.",
+
+            erwannName: "Erwann Loury",
+erwannRole: "Game Design · Sound Design",
+erwannPortfolio: "Voir son portfolio ↗",
     },
 
 
@@ -206,15 +244,49 @@ const translations = {
         visible: "Visible enemy",
         hidden: "Hidden enemy",
 
-        aiText:
-            "I contributed to enemy logic, including ranged " +
-            "enemy behaviors and movement. A path diagram " +
-            "or state chart can later document the actual " +
-            "implemented conditions.",
+        aiTitle: "Enemy AI & Pathfinding",
 
-        aiCaption:
-            "Schematic illustration: replace or adapt " +
-            "based on the actual pathfinding implementation.",
+aiIntro:
+    "SwarmZ enemies share a common targeting and navigation logic, " +
+    "then apply their own behavior depending on their type.",
+
+aiTargetTitle: "Target Acquisition",
+
+aiTargetText:
+    "When the player enters an enemy's line of sight, " +
+    "they become that enemy's target. Once acquired, the target " +
+    "is never lost: the enemy continues tracking the player permanently.",
+
+aiNavigationTitle: "Navigation & Obstacles",
+
+aiNavigationText:
+    "Buildings are registered as navigation obstacles, " +
+    "allowing enemies to use pathfinding to move around the environment " +
+    "while continuing to pursue their target.",
+
+aiVariantsTitle: "Specific Behaviors",
+
+aiVariantsText:
+    "All three enemies share the same detection and pursuit foundation, " +
+    "but each one applies a different behavior once the player has been targeted.",
+
+aiDogTitle: "Dog",
+
+aiDogText:
+    "The dog is a direct pursuit enemy. " +
+    "It always knows the player's position and continuously tracks them.",
+
+aiRangedTitle: "Ranged Enemy",
+
+aiRangedText:
+    "The thin enemy fires a projectile toward the player " +
+    "if it maintains line of sight for at least three seconds.",
+
+aiHeavyTitle: "Heavy Enemy",
+
+aiHeavyText:
+    "The heavy enemy acts as an additional pressure source: " +
+    "it can spawn the two other enemy types or create a puddle of acid on the ground.",
 
         hudText:
             "I worked on incoming projectile warnings, " +
@@ -249,12 +321,16 @@ const translations = {
             "Try the game or explore the project's " +
             "design documentation.",
 
-        godPending:
-            "Add the PDF after confirming that sharing " +
-            "is permitted.",
+            
+        readGOD:
+            "Read the GOD ↗",
 
         storePending:
-            "Only add links to official existing project pages here."
+            "Only add links to official existing project pages here.",
+
+            erwannName: "Erwann Loury",
+erwannRole: "Game Design · Sound Design",
+erwannPortfolio: "See his portfolio ↗",
     }
 };
 
@@ -430,3 +506,69 @@ const yearElement = document.getElementById("year");
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
+
+
+/* ============================
+   ENEMY BEHAVIOR TABS
+============================ */
+
+function initEnemyTabs() {
+    const tabs = document.querySelectorAll(".enemy-tab");
+    const panels = document.querySelectorAll(".enemy-panel");
+
+    if (!tabs.length || !panels.length) return;
+
+    function selectEnemy(enemyName) {
+        tabs.forEach(tab => {
+            const active = tab.dataset.enemy === enemyName;
+
+            tab.classList.toggle("is-active", active);
+            tab.setAttribute("aria-selected", String(active));
+            tab.tabIndex = active ? 0 : -1;
+        });
+
+        panels.forEach(panel => {
+            const active = panel.id === `enemy-panel-${enemyName}`;
+            panel.hidden = !active;
+            panel.classList.toggle("is-active", active);
+        });
+    }
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+            selectEnemy(tab.dataset.enemy);
+        });
+
+        tab.addEventListener("keydown", event => {
+            if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
+                return;
+            }
+
+            event.preventDefault();
+
+            let nextIndex = index;
+
+            if (event.key === "ArrowRight") {
+                nextIndex = (index + 1) % tabs.length;
+            } else if (event.key === "ArrowLeft") {
+                nextIndex = (index - 1 + tabs.length) % tabs.length;
+            } else if (event.key === "Home") {
+                nextIndex = 0;
+            } else if (event.key === "End") {
+                nextIndex = tabs.length - 1;
+            }
+
+            selectEnemy(tabs[nextIndex].dataset.enemy);
+            tabs[nextIndex].focus();
+        });
+    });
+
+    selectEnemy("dog");
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initEnemyTabs);
+} else {
+    initEnemyTabs();
+}
+

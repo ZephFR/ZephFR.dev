@@ -674,6 +674,129 @@
     height: 100%;
 }
 
+
+/* ============================
+   ENEMY AI & PATHFINDING
+============================ */
+
+#ai {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.ai-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+.ai-section h4 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+    color: #6B3F2B;
+    margin-bottom: 12px;
+}
+
+.ai-illustration {
+    margin: 0;
+    padding: 16px;
+    border: 1px solid #C99A79;
+    background: #FCE6D8;
+    border-radius: 18px;
+}
+
+.ai-illustration img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.enemy-showcase {
+    width: 100%;
+}
+
+.enemy-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.enemy-tab {
+    cursor: pointer;
+    border: 1px solid #C99A79;
+    border-radius: 12px;
+    background: #FFF4E8;
+    color: #6B3F2B;
+    padding: 13px 10px;
+    font: 700 0.95rem "Space Grotesk", sans-serif;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.enemy-tab:hover,
+.enemy-tab:focus-visible {
+    border-color: #F0865D;
+}
+
+.enemy-tab.is-active {
+    background: #F0865D;
+    color: #281711;
+    border-color: #F0865D;
+}
+
+.enemy-panel {
+    padding: 22px;
+    border: 1px solid #C99A79;
+    border-radius: 18px;
+    background: #FFF4E8;
+}
+
+.enemy-panel[hidden] {
+    display: none;
+}
+
+.enemy-panel h5 {
+    margin: 0 0 16px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.3rem;
+    color: #281711;
+}
+
+.enemy-panel .ai-illustration {
+    margin-bottom: 18px;
+}
+
+.enemy-panel p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    #ai {
+        gap: 26px;
+    }
+
+    .enemy-tab {
+        padding: 12px 6px;
+        font-size: 0.83rem;
+    }
+
+    .enemy-panel {
+        padding: 14px;
+    }
+
+    .ai-illustration {
+        padding: 8px;
+    }
+}
+
+
 /* =========================================
    HUD ILLUSTRATION
 ========================================= */

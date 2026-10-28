@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1068 533.67">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        opacity: .57;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        fill: #3aaa35;
+      }
+
+      .cls-7 {
+        fill: #282d38;
+        stroke: #1d1d1b;
+      }
+
+      .cls-7, .cls-8, .cls-9, .cls-10, .cls-11 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-8 {
+        fill: #f1865d;
+      }
+
+      .cls-8, .cls-9 {
+        stroke: #fff;
+      }
+
+      .cls-8, .cls-9, .cls-10, .cls-11 {
+        stroke-width: 4px;
+      }
+
+      .cls-3 {
+        font-family: TikTokSans-ExtraBold, 'TikTok Sans';
+        font-variation-settings: 'opsz' 36, 'wdth' 100, 'wght' 800, 'slnt' 0;
+        font-weight: 700;
+        opacity: .97;
+      }
+
+      .cls-3, .cls-4 {
+        font-size: 24px;
+      }
+
+      .cls-9 {
+        fill: #e52421;
+      }
+
+      .cls-10 {
+        stroke-dasharray: 11.69 11.69;
+      }
+
+      .cls-10, .cls-11 {
+        fill: none;
+        stroke: #3aaa35;
+      }
+
+      .cls-12 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-4 {
+        font-family: TikTokSans-Regular, 'TikTok Sans';
+        font-variation-settings: 'opsz' 36, 'wdth' 100, 'wght' 400, 'slnt' 0;
+      }
+    </style>
+  </defs>
+  <g id="Calque_2-2" data-name="Calque 2">
+    <rect class="cls-7" x=".5" y=".5" width="1067" height="532.67" rx="33.67" ry="33.67"/>
+    <g id="Player">
+      <circle class="cls-8" cx="877.51" cy="270.3" r="50"/>
+      <text class="cls-3" transform="translate(840.16 274.63)"><tspan x="0" y="0">Pl</tspan><tspan class="cls-12" x="21.58" y="0">a</tspan><tspan class="cls-1" x="34.39" y="0">y</tspan><tspan x="47.69" y="0">er</tspan></text>
+    </g>
+    <path class="cls-2" d="M298.92,170.3h200c0,110.38-89.62,200-200,200h0v-200h0Z" transform="translate(-74.29 361.25) rotate(-45)"/>
+    <circle class="cls-9" cx="257.5" cy="270.3" r="50"/>
+    <g>
+      <line class="cls-11" x1="328.5" y1="266.83" x2="334.5" y2="266.83"/>
+      <line class="cls-10" x1="346.19" y1="266.83" x2="784.65" y2="266.83"/>
+      <line class="cls-11" x1="790.5" y1="266.83" x2="796.5" y2="266.83"/>
+    </g>
+    <rect class="cls-6" x="442.5" y="159.34" width="240" height="16"/>
+    <text class="cls-4" transform="translate(507.41 146.51)"><tspan x="0" y="0">3 </tspan><tspan class="cls-5" x="19.34" y="0">S</tspan><tspan x="33.43" y="0">econdes</tspan></text>
+  </g>
+</svg>

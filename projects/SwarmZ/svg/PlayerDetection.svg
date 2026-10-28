@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1068 533.67">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        fill: #3c3c3b;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #1d1d1b;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #282d38;
+      }
+
+      .cls-4 {
+        stroke: #009640;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-width: 4px;
+      }
+
+      .cls-4, .cls-7 {
+        fill: none;
+        stroke-dasharray: 12;
+      }
+
+      .cls-5 {
+        fill: #f1865d;
+      }
+
+      .cls-5, .cls-6 {
+        stroke: #fff;
+      }
+
+      .cls-8 {
+        fill: #fff;
+        font-family: TikTokSans-ExtraBold, 'TikTok Sans';
+        font-size: 24px;
+        font-variation-settings: 'opsz' 36, 'wdth' 100, 'wght' 800, 'slnt' 0;
+        font-weight: 700;
+        opacity: .97;
+      }
+
+      .cls-6 {
+        fill: #e52421;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        stroke: #e30613;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <rect class="cls-3" x=".5" y=".5" width="1067" height="532.67" rx="33.67" ry="33.67"/>
+    <rect class="cls-2" x="541" y="83.5" width="108" height="108" rx="8.67" ry="8.67"/>
+    <rect class="cls-2" x="419" y="342.17" width="108" height="108" rx="8.67" ry="8.67"/>
+    <circle class="cls-6" cx="237.5" cy="266.83" r="50"/>
+    <g id="Player">
+      <circle class="cls-5" cx="826.31" cy="266.83" r="50"/>
+      <text class="cls-8" transform="translate(788.96 271.17)"><tspan x="0" y="0">Pl</tspan><tspan class="cls-9" x="21.58" y="0">a</tspan><tspan class="cls-1" x="34.39" y="0">y</tspan><tspan x="47.69" y="0">er</tspan></text>
+    </g>
+    <line class="cls-7" x1="266.17" y1="225.88" x2="541" y2="122.17"/>
+    <line class="cls-7" x1="274.16" y1="232.84" x2="541" y2="174.03"/>
+    <line class="cls-7" x1="280.66" y1="241.6" x2="636.83" y2="191.5"/>
+    <line class="cls-7" x1="284.54" y1="249.84" x2="823.5" y2="191.5"/>
+    <line class="cls-7" x1="287.5" y1="289.5" x2="865.5" y2="337.5"/>
+    <line class="cls-7" x1="275.74" y1="299.04" x2="858.96" y2="372.83"/>
+    <line class="cls-7" x1="268.24" y1="306.26" x2="486.17" y2="342.17"/>
+    <line class="cls-7" x1="258.83" y1="313.5" x2="419" y2="361.5"/>
+    <line class="cls-4" x1="287.5" y1="266.83" x2="776.31" y2="266.83"/>
+  </g>
+</svg>
